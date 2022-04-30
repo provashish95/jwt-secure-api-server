@@ -50,13 +50,13 @@ async function run() {
         });
         app.post('/addOrder', async (req, res) => {
             const orderInfo = req.body;
-            console.log(orderInfo);
+            //console.log(orderInfo);
             const result = await orderCollection.insertOne(orderInfo)
             res.send({ success: 'Order Upload successfully' })
         });
 
         app.get('/orderList', async (req, res) => {
-            const orderList = req.body;
+            // const orderList = req.body;
             const tokenInfo = req.headers.authorization;
             const [email, accessToken] = tokenInfo?.split(" ");
             //const decoded = verifyToken(accessToken);
@@ -97,7 +97,7 @@ function verifyToken(token) {
             email = 'Invalid email'
         }
         if (decoded) {
-            console.log(decoded)
+            //console.log(decoded)
             email = decoded
         }
     });
