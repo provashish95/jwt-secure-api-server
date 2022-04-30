@@ -87,6 +87,9 @@ app.get('/', (req, res) => {
 app.listen(port, () => {
     console.log(`Example app listening on port ${port}`)
 })
+app.get('/hero', async (req, res) => {
+    res.send('hi hero deployment');
+})
 
 
 //verify token ........ function
